@@ -1,0 +1,51 @@
+<h2 class="screen-align">Createitem</h2>
+<div id="template-iuhs" class="gjs-row">
+    <div id="template-iyajo" class="gjs-cell">
+        <div id="template-i5ang" class="gjs-row">
+            <div id="template-immf9" class="gjs-cell">
+                <label id="template-ird4t" class="label ">name</label>
+                <input id="template-ivkqh" [(ngModel)]="item.name" [ngModelOptions]="{standalone: true}"
+                ngDefaultControl class="input form-control " />
+            </div>
+            <div id="template-irpmj" class="gjs-cell">
+                <label id="template-iw8u8" class="label ">type</label>
+                <input id="template-iq2nd" [(ngModel)]="item.type" [ngModelOptions]="{standalone: true}"
+                ngDefaultControl class="input form-control " />
+            </div>
+            <div id="template-i2rvi" class="gjs-cell">
+                <label id="template-ieltc" class="label ">description
+                    <br id="template-ib5wp" class="">
+                </label>
+                <input id="template-ia3fe" [(ngModel)]="item.description" [ngModelOptions]="{standalone: true}"
+                ngDefaultControl class="input form-control " />
+            </div>
+        </div>
+        <div id="template-idn8p" class="gjs-row">
+            <div id="template-ia5x7" class="gjs-cell">
+                <label id="template-ifbmf" class="label ">price</label>
+                <input id="template-imbje" [(ngModel)]="item.price" [ngModelOptions]="{standalone: true}"
+                ngDefaultControl class="input form-control " />
+            </div>
+            <div id="template-i9roh" class="gjs-cell">
+                <label id="template-iwpx1" class="label ">price_currency_type</label>
+                <input id="template-i0kxb" [(ngModel)]="item.price_currency_type"
+                [ngModelOptions]="{standalone: true}" ngDefaultControl class="input form-control "
+                />
+            </div>
+            <div id="template-i9y18" class="gjs-cell">
+                <label id="template-ila8f" class="label ">cost</label>
+                <input id="template-ihkh8" [(ngModel)]="item.cost" [ngModelOptions]="{standalone: true}"
+                ngDefaultControl class="input form-control " />
+            </div>
+        </div>
+        <div id="template-ir2ye" class="gjs-row">
+            <div id="template-iiege" class="gjs-cell">
+                <label id="template-i0r2m" class="label ">cost_currency_type</label>
+                <input id="template-iyej6" [(ngModel)]="item.cost_currency_type"
+                [ngModelOptions]="{standalone: true}" ngDefaultControl class="input form-control "
+                />
+                <div id="template-izszw" (click)="GpCreate()" class="button btn btn-primary ">Create</div>
+            </div>
+        </div>
+    </div>
+</div>

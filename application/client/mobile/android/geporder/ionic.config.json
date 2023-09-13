@@ -1,0 +1,7 @@
+{
+  "name": "geporder",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

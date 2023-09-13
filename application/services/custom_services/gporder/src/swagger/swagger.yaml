@@ -1,0 +1,209 @@
+---
+openapi: 3.0.0
+info:
+   version: 1.3.0
+   title: geporder open api specification
+   description: gporder API
+   termsOfService: http://api_url/terms/
+   contact:
+      name: ContactName
+      email: hello@wolox.co
+      url: https://www.wolox.com.ar/
+   license:
+      name: Apache 2.0
+      url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+   - url: http://localhost:8011
+     description: gporder
+tags:
+- name: item
+- name: order
+paths:
+   "/item/{id}":
+      delete:
+         tags:
+         -  item
+         description: GpDelete
+         parameters:
+         -  in: "path"
+            description: GpDelete
+            name: id
+            required: true
+            schema:
+               type: "string"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+      get:
+         tags:
+         -  item
+         description: GpGetEntityById
+         parameters:
+         -  in: "path"
+            description: GpGetEntityById
+            name: id
+            required: true
+            schema:
+               type: "string"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+   "/item/get/search":
+      get:
+         tags:
+         -  item
+         description: GpSearch
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+   "/item/get/update":
+      put:
+         tags:
+         -  item
+         description: GpSearchForUpdate
+         requestBody:
+            content:
+               application/json:
+                  schema:
+                     $ref: "#/components/schemas/item"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+   "/item":
+      put:
+         tags:
+         -  item
+         description: GpUpdate
+         requestBody:
+            content:
+               application/json:
+                  schema:
+                     $ref: "#/components/schemas/item"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+      get:
+         tags:
+         -  item
+         description: GpGetAllValues
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+      post:
+         tags:
+         -  item
+         description: GpCreate
+         requestBody:
+            content:
+               application/json:
+                  schema:
+                     $ref: "#/components/schemas/item"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+   "/item/userid/created_by":
+      get:
+         tags:
+         -  item
+         description: GpGetNounCreatedBy
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+components:
+   schemas:
+      item:
+         type: object
+         properties:
+            type:
+               type: "string"
+               description: Description
+            name:
+               type: "string"
+               description: Description
+            description:
+               type: "string"
+               description: Description
+            price:
+               type: "string"
+               description: Description
+            price_currency_type:
+               type: "string"
+               description: Description
+            cost:
+               type: "string"
+               description: Description
+            cost_currency_type:
+               type: "string"
+               description: Description
+            gephistoryid:
+               type: "string"
+               description: Description
+      order:
+         type: object
+         properties:
+            type:
+               type: "string"
+               description: Description
+            orderstatus:
+               type: "string"
+               description: Description
+            name:
+               type: "string"
+               description: Description
+            description:
+               type: "string"
+               description: Description
+            attachments:
+               type: "string"
+               description: Description
+            gephistoryid:
+               type: "string"
+               description: Description
